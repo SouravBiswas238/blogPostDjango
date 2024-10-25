@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+        </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="{% url 'posts:list' %}">Posts</a> ||
+        <a href="{% url 'users:register' %}">user</a> ||
+        <a href="{% url 'users:login' %}">User login</a>
+    </nav>
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2020 - my project</p>
+    </footer>
+
+    
+</body>
+</html>
